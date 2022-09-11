@@ -1,145 +1,123 @@
-import 'react-native-gesture-handler';
-import React from "react";
+import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
-import BottomNav from "./BottomNav";
-import DriverLogin from '../screens/login/DriverLogin';
-import DrawerNav from "./SideDrawer";
-import Notification from "../screens/notification/Notification";
-import BuyPlan from '../screens/BuyPlan/BuyPlan';
-import PaymentOption from "../screens/payments/paymentOptions";
-import MarketingSchems from "../screens/MarketingSchems/MarketingSchems";
-import Phistory from "../screens/planHistory/PurchHistory";
-import RaisService from "../screens/complaints/RaisService";
-import ReferToDriver from "../screens/RefferToDriver/ReferToDriver";
-import NearSwapStation from "../screens/map/NearSwapStation";
-import HeroOfMonth from "../screens/HeroOfMonth/HeroOfMonth";
-import OtherComplent from "../screens/complaints/OtherComoplent";
-import SrStatus from "../screens/complaints/SrStaus";
-import CommunitySection from "../screens/CommunitySection/CommunitySec";
-import PaymentSuccessFull from "../screens/payments/PaymetSuccessFull";
-import PaymentError from "../screens/payments/PaymentError";
-import ComplantRaiseSuccess from "../screens/complaints/CmplaintRaiseSuccess";
-import SrDetails from "../screens/complaints/SrDetails";
-import StationMap from "../screens/map/StationMap";
-import DriveRefferSuccess from "../screens/RefferToDriver/RefferSuccessfull";
-import Settings from "../screens/settings/Settings";
-import SinglePageView from "../screens/OtherPages/singlePageView";
-import CurrentLocationActivity from '../screens/map/CurrentLocationActivity';
+import BottomNav from './bottomNav';
+import DrawerNav from './sideDrawer';
+import Notification from '../screens/notification/notification';
+import Settings from '../screens/settings/Settings';
+import TotalPlanSoldMonth from '../screens/swapPlanDetails/total_Plan_Sold_Month';
+import TotalPlanSoldToday from '../screens/swapPlanDetails/total_Plan_Sold_Today';
+import TotalSwapMonth from '../screens/swapPlanDetails/total_Swap_Month';
+import TotalSwapToday from '../screens/swapPlanDetails/total_Swap_Today';
+import QrScanner from '../components/QrScanner';
+import Payment from '../screens/DoSwapTransaction/GuarantorDetails';
+import ChooseAplan from '../screens/DoSwapTransaction/chooseAplan';
+import CurrentAddress from '../screens/DriverOnBoarding/CurrentAddress';
+import DriverDocumentuplaod from '../screens/DriverOnBoarding/DriverDocumentuplaod';
+import DriverOnBoardingRegister from '../screens/DriverOnBoarding/DriverOnBoardingRegister';
+import DriverOnBoardingOtpValidation from '../screens/Login/DriverOnBpardingOtpValidate';
+import GuarantorDetails from '../screens/DriverOnBoarding/GuarantorDetails';
+import GuarantorDetailsPayment from '../screens/DriverOnBoarding/GuarantorDetailsPayment';
+import PaymentError from '../screens/DriverOnBoarding/PaymentError';
+import PaymentSuccessful from '../screens/DriverOnBoarding/PaymentSuccessful';
+import PersonalDetails from '../screens/DriverOnBoarding/PersonalDetails';
+import ReferrerOnboarding from '../screens/DriverOnBoarding/ReferrerOnboarding';
+import VechileDetails from '../screens/DriverOnBoarding/VehicleDetailsRegistered';
+import VechileDetailsUnregisterd from '../screens/DriverOnBoarding/VehicleDetailsUnregistered';
+import VehicleOwner from '../screens/DriverOnBoarding/VehicleOwner';
+import SrStatus from '../screens/ActiveDriver/ActiveDrives';
+import Home2 from '../screens/home/Home';
+import DoswapTransact from '../screens/DoSwapTransaction/DoswapTransaction';
+import Plans from '../screens/plans/Plans';
+import ScanQr from '../screens/QrScanner/ScanQr';
 
+const Stack = createStackNavigator();
 const StackNav = () => {
-    const Stack = createStackNavigator()
     return (
-        <Stack.Navigator screenOptions={{ headerShown: false }}>
-
-
+        <Stack.Navigator  initialRouteName="CurrentAddress">
             <Stack.Screen name="BottomNav" component={BottomNav}
                 options={{ headerShown: false }}
             />
-
-
             <Stack.Screen name="Drawer" component={DrawerNav}
-                options={{ headerShown: false }} />
-
-
-            <Stack.Screen name="Login" component={DriverLogin}
                 options={{ headerShown: false }}
             />
-
-
-            <Stack.Screen name="Notification" component={Notification}
-                options={{ headerShown: false }}
-            />
-
-
-            <Stack.Screen name="Nearest Swaping Station" component={NearSwapStation}
-                options={{ headerShown: false }} />
-
-
-            <Stack.Screen name="Refer a Driver" component={ReferToDriver}
-                options={{ headerShown: false }} />
-
-
-            <Stack.Screen name="Raise Services" component={RaisService}
-                options={{ headerShown: false }}
-            />
-
-
-            <Stack.Screen name="Purchase History" component={Phistory}
-                options={{ headerShown: false }}
-            />
-
-
-            <Stack.Screen name="Marketing Scheme" component={MarketingSchems}
-                options={{ headerShown: false }}
-            />
-
-
-            <Stack.Screen name="Pay Wallet Option" component={PaymentOption}
-                options={{ headerShown: false }}
-            />
-
-
-            <Stack.Screen name="Buy a Plan" component={BuyPlan}
-                options={{ headerShown: false }}
-            />
-
-            <Stack.Screen name="HeroOfMonth" component={HeroOfMonth}
-                options={{ headerShown: false }}
-            />
-            <Stack.Screen name="Other Complents" component={OtherComplent}
-                options={{ headerShown: false }}
-            />
-
-
-            <Stack.Screen name="Sr Status" component={SrStatus}
-                options={{ headerShown: false }}
-            />
-
-
-            <Stack.Screen name="Community Section" component={CommunitySection}
-                options={{ headerShown: false }}
-            />
-
-
-            <Stack.Screen name="Nearest Swap" component={NearSwapStation}
-                options={{ headerShown: false }}
-            />
-
-
-            <Stack.Screen name="PaymentSuccess" component={PaymentSuccessFull}
-                options={{ headerShown: false }}
-            />
-
-
-            <Stack.Screen name="PaymentError" component={PaymentError}
-                options={{ headerShown: false }} />
-
-
-            <Stack.Screen name="ComplentRaised" component={ComplantRaiseSuccess}
-                options={{ headerShown: false }} />
-
-
-            <Stack.Screen name="SrDetails" component={SrDetails}
-                options={{ headerShown: false }} />
-
-
-            <Stack.Screen name="ReferSuccess" component={DriveRefferSuccess}
-                options={{ headerShown: false }} />
-
-            <Stack.Screen name="Map" component={StationMap}
-                options={{ headerShown: false }} />
-
             <Stack.Screen name="Settings" component={Settings}
-                options={{ headerShown: false }} />
-
-            <Stack.Screen name="SinglePageView" component={SinglePageView}
-                options={{ headerShown: false }} />
-            <Stack.Screen name="CurrentLocationActivity" component={CurrentLocationActivity}
-                options={{ headerShown: false }} />
-            
+                options={{ headerShown: false }}
+            />
+            <Stack.Screen name="Notifications" component={Notification}
+                options={{ headerShown: false }}
+            />
+            <Stack.Screen name="TotalPlanSoldMonth" component={TotalPlanSoldMonth}
+                options={{ headerShown: false }}
+            />
+            <Stack.Screen name="TotalPlanSoldToday" component={TotalPlanSoldToday}
+                options={{ headerShown: false }}
+            />
+            <Stack.Screen name="TotalSwapMonth" component={TotalSwapMonth}
+                options={{ headerShown: false }}
+            />
+            <Stack.Screen name="TotalSwapToday" component={TotalSwapToday}
+                options={{ headerShown: false }}
+            />
+            <Stack.Screen name="Qrscanner" component={QrScanner}
+                options={{ headerShown: false }}
+            />
+            <Stack.Screen name="Payment" component={Payment}
+                options={{ headerShown: false }}
+            />
+            <Stack.Screen name="ChooseAplan" component={ChooseAplan}
+                options={{ headerShown: false }}
+            />
+            <Stack.Screen name="DoswapTransact" component={DoswapTransact}
+                options={{ headerShown: false }}
+            />
+            <Stack.Screen name="CurrentAddress" component={CurrentAddress}
+                options={{ headerShown: false }}
+            />
+            <Stack.Screen name="DriverDocumentuplaod" component={DriverDocumentuplaod}
+                options={{ headerShown: false }}
+            />
+            <Stack.Screen name="DriverOnBoardingRegister" component={DriverOnBoardingRegister}
+                options={{ headerShown: false }}
+            />
+            <Stack.Screen name="DriverOnBoardingOtpValidation" component={DriverOnBoardingOtpValidation}
+                options={{ headerShown: false }}
+            />
+            <Stack.Screen name="GuarantorDetailsPayment" component={GuarantorDetailsPayment}
+                options={{ headerShown: false }}
+            />
+            <Stack.Screen name="GuarantorDetails" component={GuarantorDetails}
+                options={{ headerShown: false }}
+            />
+            <Stack.Screen name="PaymentError" component={PaymentError}
+                options={{ headerShown: false }}
+            />
+            <Stack.Screen name="PaymentSuccessful" component={PaymentSuccessful}
+                options={{ headerShown: false }}
+            />
+            <Stack.Screen name="PersonalDetails" component={PersonalDetails}
+                options={{ headerShown: false }}
+            />
+            <Stack.Screen name="ReferrerOnboarding" component={ReferrerOnboarding}
+                options={{ headerShown: false }}
+            />
+            <Stack.Screen name="SrStatus" component={SrStatus}
+                options={{ headerShown: false }}
+            />
+            <Stack.Screen name="VehicleOwner" component={VehicleOwner}
+                options={{ headerShown: false }}
+            />
+            <Stack.Screen name="VechileDetailsUnregisterd" component={VechileDetailsUnregisterd}
+                options={{ headerShown: false }}
+            />
+            <Stack.Screen name="VechileDetails" component={VechileDetails}
+                options={{ headerShown: false }}
+            />
+            <Stack.Screen name ="Home2" component={Home2}
+                 options={{headerShown:false}}/>
+            <Stack.Screen name ="Plans" component={Plans}
+                 options={{headerShown:false}}/>
 
         </Stack.Navigator>
-    )
+    );
 }
-
 export default StackNav;

@@ -7,13 +7,13 @@ import {
   ActivityIndicator,
   StyleSheet,
 } from 'react-native';
-import COLORS from '../Constants/color';
+import COLORS from '../constant/color';
 import {useNavigation} from '@react-navigation/native';
 const Loader = ({visible = false}) => {
   const navigation = useNavigation();
 const asyStorage= async()=>{
   try {
-    const value = await AsyncStorage.getItem('UserId')
+    const value = await AsyncStorage.getItem('secureid')
     if(value !== null) {
       console.log(value,"loading screen------>")
       navigation.replace(value ? 'MainScreen' : 'Login');

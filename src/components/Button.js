@@ -1,6 +1,6 @@
 import React from 'react';
 import {TouchableOpacity, Text} from 'react-native';
-import COLORS from '../Constants/color';
+import COLORS from '../constant/color';
 
 const Button = ({title, onPress = () => {},Style}) => {
   return (
@@ -14,9 +14,9 @@ const Button = ({title, onPress = () => {},Style}) => {
         borderRadius:7,
         justifyContent:'center',
         alignItems:'center',
-        width:'100%',
+        width:Style.width,
         alignSelf:'center',
-        marginTop:Style,
+        marginTop:Style.margintop,
         padding:10
       }}>
       <Text style={{color: COLORS.white, fontWeight: 'bold', fontSize: 18}}>
